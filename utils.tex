@@ -1,0 +1,54 @@
+% utils.tex - A LaTeX file that contains commonly used commands and other
+% miscellaneous things.
+% Author: Evan Carmi http://ecarmi.org/
+% Usage: to include this file in another .tex file add:
+%   \input{/path/to/utils.tex}
+% to the preamble of that document.
+
+% Create a horizontal rule across the page.
+\newcommand{\HRule}{\noindent\rule{\linewidth}{.5mm}\\}
+
+\newcommand{\hwheader}[1]{\begin{center}
+    % Define command to create a custom header for homework assignments which
+    % automatically includes the date.
+    % Example Usage: \hwheader{Comp 312: Algorithms and Complexity\\Assignment 1}}
+    % Based off a header by Matt Adelman.
+    \textbf{ Evan Carmi\\
+    #1\\
+    \today
+    } \end{center}
+    \HRule
+}
+\newcommand{\register}[1]{
+    % Create a register through a table:
+    % Example Usage: \register{1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\}
+    % LaTeX ignores extra columns, so support up to 64-bit registers
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        #1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+\newcommand{\registerb}[1]{
+    % Create a register through a table with each 4 bits separated:
+    % Example Usage: \register{1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\}
+    % LaTeX ignores extra columns, so supports up to 64-bit registers
+    \begin{center}
+    \begin{tabular}{|c|c|c|c || c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c||c|c|c|c|}
+        \hline
+        #1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\newcommand{\problem}[1]{
+    % Create a problem - solution prompt.
+    % Param 1: The text of the problem, which will be prefixed with Problem:.
+    % Solution: will be appended to text.
+    % Example Usage: \problem{What's 2+2}2+2 is 5.
+    \textbf{Problem:} #1\\
+    \textbf{Solution:}
+    }
